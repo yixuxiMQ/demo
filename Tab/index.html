@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="tabs_area">
+        <ul id="J_tabs" class="tabs">
+            <span class="line"></span>
+            <li class="active"><a href="javascript:;">选项1</a></li>
+            <li><a href="javascript:;">选项2</a></li>
+            <li><a href="javascript:;">选项3</a></li>
+            <li><a href="javascript:;">选项4</a></li>
+            <li><a href="javascript:;">选项5</a></li>
+        </ul>
+        <div id="tabs_content"></div>
+
+        <div id="J_data" style="display: none;">
+            <div class="data-item">1</div>
+            <div class="data-item">2</div>
+            <div class="data-item">3</div>
+            <div class="data-item">4</div>
+            <div class="data-item">5</div>
+        </div>
+    </div>
+
+
+    <script src="./js/practice.js"></script>
+    <script type="text/javascript">
+        let tabDOM = document.getElementById('J_tabs'),
+            tabContent = document.getElementById('tabs_content'),
+            tabData = document.getElementById('J_data');
+
+        // console.log(tabData[0].innerHTML);
+
+        
+        new Tab(tabDOM, tabContent, {
+            tabs: tabDOM.querySelectorAll('li'),
+            data: tabData.querySelectorAll('.data-item'),
+            line: tabDOM.querySelector('.line')
+        }).init();  
+    </script>
+</body>
+</html>
